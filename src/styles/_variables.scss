@@ -1,0 +1,27 @@
+$base-color: #3C9E71;
+$accent-color: #2a4128;
+$error-color: #CC3232;
+$divider-color: #3E6B94;
+
+$vars: (
+        base: (
+                base: $base-color,
+                light: lighten($base-color, 25%),
+                dark: darken($base-color, 25%)
+        ),
+        accent: (
+                base: $accent-color,
+                light: lighten($accent-color, 25%),
+                dark: darken($accent-color, 25%)
+        ),
+        errors: (
+                base: $error-color,
+                light: lighten($error-color, 25%),
+                dark: darken($error-color, 25%)
+        ),
+        divider: (
+                base: $divider-color,
+                light: lighten($divider-color, 25%),
+                dark: darken($divider-color, 25%)
+        )
+);

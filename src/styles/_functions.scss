@@ -1,0 +1,5 @@
+@import "variables";
+
+@function get-color($base: 'base', $type: 'base', $hue: 0deg, $opacity: 1){
+  @return rgba(adjust_hue(map_get(map_get($vars, $base), $type), $hue), $opacity);
+}
