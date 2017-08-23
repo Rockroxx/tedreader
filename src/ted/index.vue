@@ -273,7 +273,10 @@
                 this.query.offset = response[1];
             },
             beforeSearch(vals){
+                console.log("Before");
                 this.query.offset = 0;
+                console.log(window.results);
+
                 var data = {};
                 for(var name in vals){
                     if(vals[name] !== null && vals[name] !== false && vals[name] !== "")
@@ -317,11 +320,13 @@
                 this.query[name] = query_params[name];
             }
 
+
             if(window.results !== undefined){
                 this.results = window.results;
                 this.query.total = window.total;
             }
             else{
+
                 var data = Object.assign({}, this.query);
                 data.url = undefined;
                 data.total = undefined;

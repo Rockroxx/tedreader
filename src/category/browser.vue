@@ -7,9 +7,9 @@
                 <div class="items-container">
                     <cpv-item v-for="cpv in list" :key="cpv.id" :item="cpv" :depth="0" v-model="categories"></cpv-item>
                 </div>
-                <div class="close-button" @click="show_browser = false"></div>
             </div>
         </transition>
+        <div class="close-button" v-if="show_browser" @click="show_browser = false"></div>
     </div>
 </template>
 
@@ -32,16 +32,16 @@
             .items-container{
                 margin-top: 4em;
             }
-            .close-button{
-                position: fixed;
-                top:0;
-                bottom:0;
-                right:0;
-                width:30%;
-                background-color: rgba(0,0,0,0.2);
-            }
         }
 
+        .close-button{
+            position: fixed;
+            top:0;
+            bottom:0;
+            right:0;
+            width:30%;
+            background-color: rgba(0,0,0,0.2);
+        }
     }
 </style>
 
@@ -70,6 +70,8 @@
                 if(Array.isArray(value)){
                     this.$upstream('categories', this.categories.join(','));
                     this.$emit('input', this.categories.join(','));
+
+                    console.log("Before-cats");
                     if(this.saveChange !== undefined){
                         this.$bounce();
                     }
