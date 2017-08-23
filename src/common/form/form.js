@@ -235,7 +235,7 @@ Vue.component('g-input', {
         return createElement('input', {
             domProps: {
                 value: self.val,
-                type: self.type,
+                type: self.type || 'text',
                 id: 'g_' + self.name
             },
             on: {
