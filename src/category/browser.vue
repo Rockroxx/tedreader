@@ -58,7 +58,8 @@
             return {
                 show_browser: false,
                 list: [],
-                categories: []
+                categories: [],
+                initial: false
             }
         },
         watch:{
@@ -70,10 +71,13 @@
                 if(Array.isArray(value)){
                     this.$upstream('categories', this.categories.join(','));
                     this.$emit('input', this.categories.join(','));
-
-                    console.log("Before-cats");
-                    if(this.saveChange !== undefined){
-                        this.$bounce();
+                    if(this.initial == true) {
+                        if (this.saveChange !== undefined) {
+                            this.$bounce();
+                        }
+                    }
+                    else{
+                        this.initial = true;
                     }
                 }
             }
