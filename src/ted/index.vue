@@ -187,7 +187,7 @@
                     take: 20,
                     total: 0,
                     search: null,
-                    url: 'http://tedapi.com/search',
+                    url: window.api_url+'search',
                     virtual: true,
                     categories: ""
                 },
