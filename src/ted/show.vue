@@ -216,8 +216,13 @@
         },
 
         mounted(){
+            // TODO implement a categories viewer
             if(window.notice){
                 this.notice = window.notice;
+                this.lots = window.lots;
+                this.contacts = window.contacts;
+                this.awards = window.awards;
+                this.categories = window.categories;
             }
             else{
                 this.$http.get(window.api_url+'view/'+this.$route.params.slug).then((res) => {
@@ -225,6 +230,7 @@
                     this.lots = res.data.lots;
                     this.contacts = res.data.contacts;
                     this.awards = res.data.awards;
+                    this.categories = res.data.categories;
                 })
             }
         },
