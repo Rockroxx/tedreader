@@ -11,7 +11,7 @@
 
         <h3>Open-source</h3>
         <p>
-            The full backend API is available <a href="" target="_blank">here</a> and the front-end is available <a href="" target="_blank">here</a>. Both are licenced under the <a href="http://opensource.org/licenses/MIT" target="_blank">MIT licence</a>.
+            The full backend API is available <a href="https://github.com/Rockroxx/tedreader-api" target="_blank">here</a> and the front-end is available <a href="https://github.com/Rockroxx/tedreader" target="_blank">here</a>. Both are licenced under the <a href="http://opensource.org/licenses/MIT" target="_blank">MIT licence</a>.
         </p>
         <h3>Developer</h3>
         <p>
