@@ -88,57 +88,10 @@
             }
             if(!window.categories_list){
                 this.$http.get(window.api_url+'categories').then((response) => {
-                    this.build_tree(response.data);
+                    this.list = response.data;
                 })
             }
-            else
-                this.build_tree(window.categories_list);
-        },
-
-        methods: {
-            build_tree(list){
-                var tree = [];
-                var base = function(code){
-                    var length = code.length;
-                    var count = 0;
-                    for(var i = length-1; i >= 0; i--){
-                        if(code[i] == 0)
-                            count++;
-                        else
-                        {
-                            if(length-count < 2)
-                                return code.substr(0, 2);
-                            else
-                                return code.substr(0, length-count);
-                        }
-                    }
-                }
-                for(var i = 0; i < list.length-1; i++){
-                    var b = base(list[i].code);
-
-                    list[i].code = b;
-                }
-                var recursive_tree = function(parent, length){
-                    var children = [];
-                    for(var i = 0; i < list.length-1; i++){
-                        if(list[i].code.length == length){
-                            if(list[i].code.substr(0, length-1) == parent.code){
-                                children.push(Object.assign({children: recursive_tree(list[i], length+1)}, list[i]));
-                            }
-                        }
-                    }
-                    return children;
-                }
-//
-                for(var i = 0; i < list.length-1; i++){
-                    if(list[i].code.length <= 2)
-                    {
-                        tree.push(Object.assign({children: recursive_tree(list[i], 3)}, list[i]));
-                    }
-                }
-
-                this.list = tree;
-            }
+            else this.list = window.categories_list;
         },
         props: ["value", "saveChange"],
         mixins: [mixins.passthrough_mixin]
