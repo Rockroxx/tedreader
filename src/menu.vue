@@ -158,16 +158,6 @@
                 background-color: rgba(0, 0, 0, 0.2);
             }
         }
-        .left-spring-enter-active {
-            transition: all .3s ease;
-        }
-        .left-spring-leave-active {
-            transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-        }
-        .left-spring-enter, .left-spring-leave-to {
-            transform: translateX(-30px);
-            opacity: 0;
-        }
     }
 
 </style>

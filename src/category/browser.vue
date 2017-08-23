@@ -2,12 +2,14 @@
     <div class="category-browser-container">
         <label>{{categories.length}} Categories Selected</label>
         <button class="show-browser-button" type="button" @click="show_browser = true">Categories</button>
-        <div class="browser" v-if="show_browser">
-            <div class="items-container">
-                <cpv-item v-for="cpv in list" :key="cpv.id" :item="cpv" :depth="0" v-model="categories"></cpv-item>
+        <transition name="left-spring">
+            <div class="browser" v-show="show_browser">
+                <div class="items-container">
+                    <cpv-item v-for="cpv in list" :key="cpv.id" :item="cpv" :depth="0" v-model="categories"></cpv-item>
+                </div>
+                <div class="close-button" @click="show_browser = false"></div>
             </div>
-            <div class="close-button" @click="show_browser = false"></div>
-        </div>
+        </transition>
     </div>
 </template>
 
