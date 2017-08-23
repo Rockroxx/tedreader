@@ -60,7 +60,7 @@
                             <g-a :href="'/view/'+notice.slug">{{notice.deadline || 'N/A'}}</g-a>
                         </td>
                         <td>
-                            <g-a :href="'/view/'+notice.slug">{{notice.value || 'N/A'}}</g-a>
+                            <g-a :href="'/view/'+notice.slug">{{notice.currency}} {{notice.value || 'N/A'}}</g-a>
                         </td>
                     </tr>
                     </tbody>
