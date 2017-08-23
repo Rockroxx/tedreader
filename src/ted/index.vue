@@ -12,20 +12,20 @@
                     </button>
                     <transition name="slide-down">
                         <div v-show="show_more_filters" id="filters">
-                            <g-container>
+                            <g-container display="Type">
                                 <g-select name="type" :options="typeOptions" v-model="query.type" save-change="500"></g-select>
                             </g-container>
 
-                            <g-container>
+                            <g-container display="Nature">
                                 <g-select name="nature" :options="natureOptions" v-model="query.nature" save-change="500"></g-select>
                             </g-container>
-                            <g-container>
+                            <g-container display="Language">
                                 <g-select name="lang" :options="langOptions" v-model="query.lang" save-change="500"></g-select>
                             </g-container>
-                            <g-container>
+                            <g-container display="Results Per Page">
                                 <g-select name="take" :options="takeOptions" v-model="query.take" save-change="500"></g-select>
                             </g-container>
-                            <g-container>
+                            <g-container display="Order">
                                 <g-select name="order" :options="orderOptions" v-model="query.order" save-change="500"></g-select>
                             </g-container>
                             <cpv-browser v-model="query.categories" save-change="500"></cpv-browser>
@@ -213,6 +213,7 @@
                 ],
                 natureOptions:[
                     {name: 'All Natures', value: null},
+                    {name: 'Combined', value: 'Combined'},
                     {name: 'Services', value: "Services"},
                     {name: 'Supplies', value: "Supplies"},
                     {name: 'Works', value: 'Works'},
