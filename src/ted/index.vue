@@ -318,6 +318,7 @@
 
             if(window.results !== undefined){
                 this.results = window.results;
+                this.query.total = window.total;
             }
             else{
                 var data = Object.assign({}, this.query);
